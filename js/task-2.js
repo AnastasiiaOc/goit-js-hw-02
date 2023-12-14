@@ -1,18 +1,24 @@
-function calculateTotal(number) {
-  let i= 1;
-  let total = 0;
- // let total = temps +i;
 
-  while (i <= number){ 
-    total++;
+function formatMessage(message, maxLength) {
+
+  let cutMessage = message.slice(0, maxLength);
+  
+  if (message.length <= maxLength) {
+     return message;
   }
-  return total;
+
+ else
+    return `${cutMessage}...`;
+
 }
-calculateTotal(3);
-calculateTotal(0);
-calculateTotal(1);
-calculateTotal(4);
 
 
 
-console.log("hello");
+console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
+console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
+console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
+console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
+
+// else if (message.length > maxLength) 
